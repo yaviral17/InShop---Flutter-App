@@ -1,16 +1,7 @@
-# inshop
+# InShop
+> To test the app [click here](https://drive.google.com/file/d/122N667pUfZHBeqrO_r_b-Ql_R3u4Kv8b/view?usp=share_link) and download.
+<h1>HOW TO USE</h1>
 
-A new Flutter project.
+> On login Page you can directly tap on login button to see home page
+> Currenty it is uder development 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
