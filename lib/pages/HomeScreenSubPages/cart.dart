@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
-import 'package:inshop/pages/HomeScreenSubPages/item.dart';
 import 'package:inshop/utils/colors.dart';
+import 'package:inshop/utils/imageStrings.dart';
+import 'package:inshop/utils/properties.dart';
 import 'package:inshop/utils/widgets.dart';
+import 'package:lottie/lottie.dart';
 
 var itemList = <CartItemView>[
-  CartItemView(
-    imageString: 'assets/images/cart/shoe1.png',
-    priceNow: '599',
-    originalPrice: '1299',
-    productName: 'Air Max 90-EZ Black 1',
-    saveForLater: true,
-    // index: 0,
-  ),
   CartItemView(
     imageString: 'assets/images/cart/shoe1.png',
     priceNow: '599',
@@ -69,53 +62,115 @@ class _CartSubScreenState extends State<CartSubScreen> {
   Widget build(BuildContext context) {
     // listRefresh();
     double displayWidth = MediaQuery.of(context).size.width;
-    return Material(
-      child: Stack(
-        children: [
-          Container(
-            color: Colors.grey,
-            child: Row(
-              children: const [
-                Text(
-                  '  My Cart',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontFamily: 'Grandis Extended',
-                    fontWeight: FontWeight.w600,
-                    // letterSpacing: 1,
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.only(top: 60),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  children: itemList,
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 5),
+                  padding:
+                      EdgeInsets.only(top: 4, left: 16, right: 8, bottom: 12),
+                  width: displayWidth * 0.95,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Total Price',
+                            style: homesScreenRecommendationTitle,
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '3' + ' items',
+                            style: priceTextForCard,
+                          ),
+                          Spacer(),
+                          Text(
+                            '₹' + '500',
+                            style: priceTextForCartTotal,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      MarginLine(
+                        lineWidth: displayWidth * 0.78,
+                        shadowColor: Colors.transparent,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Shipping Address',
+                            style: homesScreenRecommendationTitle,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            width: 30,
+                            height: 30,
+                            alignment: Alignment.center,
+                            child: Lottie.asset(deliveryTruck),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Gali No. 6 Block...'.length > 30
+                                ? 'Gali No. 6 Block - A Tulip Road ...'
+                                : 'Gali No. 6 Block - A Tulip R',
+                            style: priceTextForCard,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
+                Column(
+                  children: itemBuyLater,
+                )
               ],
             ),
           ),
-          SingleChildScrollView(
-            child: Container(
-              width: displayWidth,
-              margin: EdgeInsets.only(
-                left: displayWidth * 0.025,
-                right: displayWidth * 0.025,
-                top: displayWidth * 0.02,
-              ),
-              // color: Color.fromARGB(71, 158, 158, 158),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Column(
-                    children: itemList,
-                  ),
-                  MarginLine(lineWidth: displayWidth * 0.7),
-                  Column(
-                    children: itemBuyLater,
-                  ),
-                ],
-              ),
+        ),
+        Container(
+          width: displayWidth,
+          height: 52,
+          decoration: BoxDecoration(
+            color: defaultWhite,
+            boxShadow: [BoxShadow(blurRadius: 10, color: defaultWhite)],
+          ),
+          child: Container(
+            margin: EdgeInsets.only(top: 10, left: 16),
+            child: Text(
+              'My Cart',
+              style: pageTitle,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

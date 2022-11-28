@@ -95,6 +95,7 @@ flutter:
   - assets/animations/payment.json
   - assets/animations/register.json
   - assets/animations/registration_done.json
+  - assets/animations/delivery_truck.json
   - assets/images/cart/shoe1.png
   - assets/images/cart/shoe2.png
   - assets/images/cart/shoe3.png

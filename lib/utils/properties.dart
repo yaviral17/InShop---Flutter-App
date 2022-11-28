@@ -72,3 +72,22 @@ const TextStyle priceTextFor = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w500,
 );
+
+const TextStyle pageTitle = TextStyle(
+  color: Colors.black,
+  fontSize: 24,
+  fontWeight: FontWeight.w700,
+  fontFamily: 'Plus Jakarta',
+  letterSpacing: 1,
+);
+
+const BoxDecoration roundedCornerWhiteBg = BoxDecoration(
+  color: Colors.white,
+  // borderRadius: BorderRadius.circular(10),
+);
+
+const TextStyle priceTextForCartTotal = TextStyle(
+  color: Colors.black,
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+);

@@ -18,3 +18,4 @@ const String manWalkingWithDog =
     "https://assets2.lottiefiles.com/packages/lf20_XRLjtE.json";
 
 const String userSignUp = "assets/animations/register.json";
+const String deliveryTruck = "assets/animations/delivery_truck.json";
