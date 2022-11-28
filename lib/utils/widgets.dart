@@ -96,6 +96,7 @@ class CartItemView extends StatefulWidget {
   final String priceNow;
   final String originalPrice;
   final String productName;
+  double numberOfItem;
   bool saveForLater;
   // int index;
   CartItemView({
@@ -105,7 +106,7 @@ class CartItemView extends StatefulWidget {
     required this.originalPrice,
     required this.productName,
     required this.saveForLater,
-    // required this.index,
+    this.numberOfItem = 1,
   });
 
   @override
@@ -225,6 +226,50 @@ class _CartItemViewState extends State<CartItemView> {
                     ),
                   ),
                   Spacer(),
+                ],
+              ),
+            ),
+            Spacer(),
+            SizedBox(
+              width: 16,
+            ),
+            Container(
+              height: 26,
+              decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(17),
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.blue,
+                  )),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.remove,
+                  ),
+                ],
+              ),
+            ),
+            Text(
+              '  1  ',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+            Container(
+              height: 26,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 81, 177, 255),
+                borderRadius: BorderRadius.circular(17),
+                border: Border.all(
+                  width: 1,
+                  color: Colors.transparent,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
                 ],
               ),
             ),

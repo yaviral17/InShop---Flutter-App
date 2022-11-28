@@ -19,3 +19,6 @@ const String manWalkingWithDog =
 
 const String userSignUp = "assets/animations/register.json";
 const String deliveryTruck = "assets/animations/delivery_truck.json";
+
+const String paymentSuccessful =
+    "https://assets4.lottiefiles.com/packages/lf20_vuliyhde.json";

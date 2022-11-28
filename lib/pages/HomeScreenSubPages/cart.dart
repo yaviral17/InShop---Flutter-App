@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inshop/utils/buttons.dart';
 import 'package:inshop/utils/colors.dart';
 import 'package:inshop/utils/imageStrings.dart';
 import 'package:inshop/utils/properties.dart';
@@ -81,6 +82,12 @@ class _CartSubScreenState extends State<CartSubScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(186, 158, 158, 158),
+                          spreadRadius: 0.3,
+                          blurRadius: 8),
+                    ],
                   ),
                   child: Column(
                     children: [
@@ -137,16 +144,109 @@ class _CartSubScreenState extends State<CartSubScreen> {
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'Gali No. 6 Block...'.length > 30
                                 ? 'Gali No. 6 Block - A Tulip Road ...'
                                 : 'Gali No. 6 Block - A Tulip R',
                             style: priceTextForCard,
                           ),
+                          const Spacer(),
+                          Container(
+                            width: 100,
+                            height: 34,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(203, 187, 222, 251),
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(
+                                color: Colors.blue,
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Change',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
                         ],
+                      ),
+                      MarginLine(
+                        lineWidth: displayWidth * 0.78,
+                        shadowColor: Colors.transparent,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            'Payments Method',
+                            style: homesScreenRecommendationTitle,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            width: 30,
+                            height: 28,
+                            alignment: Alignment.center,
+                            child: Lottie.network(
+                                'https://assets4.lottiefiles.com/private_files/lf30_wfireqh5.json'),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'UPI : ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Text(
+                            "yaviral17@okhdfc",
+                            style: priceTextForCard,
+                          ),
+                          const Spacer(),
+                          Container(
+                            width: 100,
+                            height: 34,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(203, 187, 222, 251),
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(
+                                color: Colors.blue,
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Change',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      roundedEdgeButton(
+                        lableText: 'Confirm your purchase',
+                        buttonHeight: 50,
+                        buttonWidth: displayWidth * 0.86,
+                        lableTextStyle: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                        ),
+                        buttonEdgeRadius: 12,
                       ),
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 Column(
                   children: itemBuyLater,
