@@ -51,7 +51,7 @@ class _HomeScreenPersonalState extends State<HomeScreenPersonal> {
                       ],
                     ),
                     margin: EdgeInsets.all(displayWidth * .05),
-                    height: displayWidth * 0.140,
+                    height: 55,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

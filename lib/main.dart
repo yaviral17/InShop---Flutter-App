@@ -23,22 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class pages extends StatelessWidget {
-  const pages({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: "/",
-      routes: {
-        "/first": (context) => loginScreen_(),
-        // "/second": (context) => loginScreen_(),
-      },
-      title: 'navigation page ',
-      theme: ThemeData(primaryColor: Colors.blueGrey),
-      home: loginScreen_(),
-    );
-  }
-}
