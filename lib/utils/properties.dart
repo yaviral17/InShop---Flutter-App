@@ -91,3 +91,6 @@ const TextStyle priceTextForCartTotal = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w700,
 );
+
+const TextStyle myOrderCardTitleText =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.w600);

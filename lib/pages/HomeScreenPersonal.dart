@@ -3,7 +3,7 @@ import 'package:inshop/pages/HomeScreenSubPages/cart.dart';
 import 'package:inshop/pages/HomeScreenSubPages/home_.dart';
 import 'package:inshop/pages/HomeScreenSubPages/navbarUtils.dart';
 import 'package:inshop/pages/HomeScreenSubPages/orders.dart';
-import 'package:inshop/pages/HomeScreenSubPages/profile.dart';
+import 'package:inshop/pages/HomeScreenSubPages/menue.dart';
 import 'package:inshop/utils/colors.dart';
 import 'package:inshop/utils/properties.dart';
 import 'package:inshop/utils/widgets.dart';
@@ -113,10 +113,10 @@ class _HomeScreenPersonalState extends State<HomeScreenPersonal> {
                           },
                           child: currentIndex == 3
                               ? NavBarSelectedItem(
-                                  iconSelected: Icons.person_rounded,
+                                  iconSelected: Icons.menu,
                                 )
                               : NavBarNotSelectedItem(
-                                  icon: Icons.person_rounded,
+                                  icon: Icons.menu,
                                 ),
                         ),
                         const Spacer(),

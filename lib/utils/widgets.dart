@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inshop/pages/HomeScreenSubPages/cart.dart';
 import 'package:inshop/pages/HomeScreenSubPages/item.dart';
+import 'package:inshop/utils/buttons.dart';
 import 'package:inshop/utils/colors.dart';
 import 'package:inshop/utils/properties.dart';
 
@@ -344,6 +345,197 @@ class ShadowLine extends StatelessWidget {
             blurRadius: 5,
             // spreadRadius: 2,
           )
+        ],
+      ),
+    );
+  }
+}
+
+class MyOrderNav extends StatelessWidget {
+  final double widgetHeight;
+  final double widgetWidth;
+  final Color bgColor;
+  final String innderLable;
+  bool selected;
+  MyOrderNav({
+    super.key,
+    required this.widgetHeight,
+    required this.widgetWidth,
+    this.bgColor = navbarSelected,
+    this.selected = false,
+    required this.innderLable,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: widgetWidth,
+      height: widgetHeight,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(
+        innderLable,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 18,
+        ),
+      ),
+    );
+  }
+}
+
+class MyOrderStatusCard extends StatefulWidget {
+  final String orderID;
+  final int numberOfItems;
+  final double TotalBill;
+  final String orderStatus;
+  MyOrderStatusCard({
+    super.key,
+    required this.orderID,
+    required this.numberOfItems,
+    required this.TotalBill,
+    required this.orderStatus,
+  });
+
+  @override
+  State<MyOrderStatusCard> createState() => _MyOrderStatusCardState();
+}
+
+class _MyOrderStatusCardState extends State<MyOrderStatusCard> {
+  @override
+  Widget build(BuildContext context) {
+    double displayWidth = MediaQuery.of(context).size.width;
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(109, 158, 158, 158),
+            blurRadius: 12,
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 16,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 18,
+              ),
+              Text(
+                'Order ID',
+                style: myOrderCardTitleText,
+              ),
+              Spacer(),
+              Text(widget.orderID),
+              SizedBox(
+                width: 18,
+              ),
+            ],
+          ),
+          MarginLine(
+            lineWidth: displayWidth * 0.9,
+            shadowColor: Colors.transparent,
+          ),
+          // SizedBox(
+          //   height: 16,
+          // ),
+          Row(
+            children: [
+              SizedBox(
+                width: 18,
+              ),
+              Text(
+                'Order List',
+                style: myOrderCardTitleText,
+              ),
+              Spacer(),
+              Text('${widget.numberOfItems} items'),
+              SizedBox(
+                width: 18,
+              ),
+            ],
+          ),
+          MarginLine(
+            lineWidth: displayWidth * 0.9,
+            shadowColor: Colors.transparent,
+          ),
+          // SizedBox(
+          //   height: 16,
+          // ),
+          Row(
+            children: [
+              SizedBox(
+                width: 18,
+              ),
+              Text(
+                'Total Bill',
+                style: myOrderCardTitleText,
+              ),
+              Spacer(),
+              Text('₹ ${widget.TotalBill}'),
+              SizedBox(
+                width: 18,
+              ),
+            ],
+          ),
+          MarginLine(
+            lineWidth: displayWidth * 0.9,
+            shadowColor: Colors.transparent,
+          ),
+          // SizedBox(
+          //   height: 16,
+          // ),
+          Row(
+            children: [
+              SizedBox(
+                width: 18,
+              ),
+              Text(
+                'Status',
+                style: myOrderCardTitleText,
+              ),
+              Spacer(),
+              Text(
+                widget.orderStatus,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 53, 39),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(
+                width: 18,
+              ),
+            ],
+          ),
+          MarginLine(
+            lineWidth: displayWidth * 0.9,
+            shadowColor: Colors.transparent,
+          ),
+          // SizedBox(
+          //   height: 16,
+          // ),
+          Row(
+            children: [
+              Spacer(),
+              // Text('Track My Order'),
+              embadedTextClickable_W(lableText: 'Track My Order'),
+              SizedBox(
+                width: 18,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 16,
+          ),
         ],
       ),
     );
