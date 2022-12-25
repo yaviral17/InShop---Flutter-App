@@ -20,13 +20,13 @@ class embadedTextClickable_W extends StatelessWidget {
 }
 
 class roundedEdgeButton extends StatelessWidget {
-  final String lableText;
-  final double buttonHeight;
-  final double buttonWidth;
-  final Color buttonBackgroundColor;
-  final TextStyle lableTextStyle;
-  final double buttonEdgeRadius;
-  const roundedEdgeButton({
+  String lableText;
+  double buttonHeight;
+  double buttonWidth;
+  Color buttonBackgroundColor;
+  TextStyle lableTextStyle;
+  double buttonEdgeRadius;
+  roundedEdgeButton({
     super.key,
     required this.lableText,
     required this.buttonHeight,

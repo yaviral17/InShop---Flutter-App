@@ -18,16 +18,17 @@ class loginScreen_ extends StatefulWidget {
 }
 
 class _loginScreen_State extends State<loginScreen_> {
+  TextEditingController username = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    var display = MediaQuery.of(context).size;
     return Material(
-      child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
+      child: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
             Container(
               decoration:
                   BoxDecoration(border: Border.all(color: Colors.white)),
@@ -36,8 +37,9 @@ class _loginScreen_State extends State<loginScreen_> {
               height: 300,
               child: Lottie.asset(cartSlidingOnPhone),
             ),
-            // const SizedBox(height: 24.0),
-            const Spacer(),
+            SizedBox(
+              height: display.height * (6 / 100),
+            ),
             const Text(
               "Login",
               style: TextStyle(
@@ -46,43 +48,87 @@ class _loginScreen_State extends State<loginScreen_> {
                 fontSize: 42.0,
               ),
             ),
-            const SizedBox(height: 24.0),
+            SizedBox(
+              height: display.height * (2 / 100),
+            ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  inputTextAuthPage(
-                    hintText: "Email",
-                    iconOnLeft: Icons.alternate_email,
-                    iconColor: Colors.blue,
-                    inputType: TextInputType.emailAddress,
-                    textController: TextEditingController(),
+                  Container(
+                    width: display.width * (85 / 100),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          // spreadRadius: 1,
+                          blurRadius: 2,
+                        )
+                      ],
+                    ),
+                    child: TextFormField(
+                      controller: username,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(top: 16),
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        hintText: "Email",
+                        prefixIcon: Icon(
+                          Icons.alternate_email,
+                        ),
+                      ),
+                    ),
                   ),
-                  const SizedBox(
-                    height: 24,
+                  SizedBox(
+                    height: display.height * (2 / 100),
                   ),
                   Stack(
                     children: [
-                      inputTextAuthPage(
-                        textController: TextEditingController(),
-                        inputType: TextInputType.text,
-                        hintText: "Password",
-                        iconOnLeft: Icons.lock_outline_rounded,
-                        iconColor: Colors.blue,
-                        obscore: true,
+                      Center(
+                        child: Container(
+                          width: display.width * (85 / 100),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                // spreadRadius: 1,
+                                blurRadius: 2,
+                              )
+                            ],
+                          ),
+                          child: TextFormField(
+                            controller: password,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.only(top: 16),
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              hintText: "Password",
+                              prefixIcon: Icon(
+                                Icons.lock_outline_rounded,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
-                        height: 55,
-                        padding: const EdgeInsets.only(right: 15.0),
+                        height: 44,
                         alignment: Alignment.centerRight,
-                        child: const embadedTextClickable_W(
-                          lableText: "Forget?",
+                        padding:
+                            EdgeInsets.only(right: display.width * (8 / 100)),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text("Forget?"),
                         ),
-                      )
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 24.0),
+                  SizedBox(
+                    height: display.height * (2 / 100),
+                  ),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -90,15 +136,17 @@ class _loginScreen_State extends State<loginScreen_> {
                           CupertinoPageRoute(
                               builder: (context) => HomeScreenPersonal()));
                     },
-                    child: const roundedEdgeButton(
-                      buttonHeight: 50,
-                      buttonWidth: 350,
+                    child: roundedEdgeButton(
+                      buttonHeight: 48,
+                      buttonWidth: display.width*(60/100),
                       lableText: "Login",
                       lableTextStyle: regulatInnerButtonStyle,
                       buttonEdgeRadius: 12,
                     ),
                   ),
-                  const SizedBox(height: 24.0),
+                  SizedBox(
+                    height: display.height * (2 / 100),
+                  ),
                   const Text(
                     "Or, login with...",
                     style: regularPageNote,
@@ -106,7 +154,9 @@ class _loginScreen_State extends State<loginScreen_> {
                 ],
               ),
             ),
-            const SizedBox(height: 24.0),
+            SizedBox(
+              height: display.height * (2 / 100),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -127,7 +177,9 @@ class _loginScreen_State extends State<loginScreen_> {
                 ),
               ],
             ),
-            const Spacer(),
+            SizedBox(
+              height: display.height * (5 / 100),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -143,7 +195,6 @@ class _loginScreen_State extends State<loginScreen_> {
                 ),
               ],
             ),
-            const Spacer(),
           ],
         ),
       ),
