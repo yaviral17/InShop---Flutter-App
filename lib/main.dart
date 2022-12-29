@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/constants.dart';
 import 'package:inshop/pages/HomeScreenPersonal.dart';
 import 'package:inshop/pages/HomeScreenSubPages/orders.dart';
 import 'package:inshop/pages/loginScreen.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
-          child: IntroScreen(),
+          child: loginScreen_(),
         ),
       ),
     );
